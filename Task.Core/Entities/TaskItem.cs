@@ -22,5 +22,5 @@ public class TaskItem
     // EN-04-R1: navigation only
     public Project Project { get; set; } = null!;
     public User? TakenByUser { get; set; }
-    public ICollection<Label> Labels { get; set; } = new List<Label>();
+    public ICollection<Label> Labels { get; set; } = [];
 }

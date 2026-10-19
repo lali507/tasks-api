@@ -38,7 +38,13 @@ Git's OpenSSL fails on this network ("unable to get local issuer certificate"). 
 - Repository and service interfaces live in Core (CO-04). Service depends on those interfaces, never on Data.
 - **Never use a namespace that starts with `Task`.** A `Task` namespace hides `System.Threading.Tasks.Task`, so a plain `async Task` fails with CS0118. Project and folder names stay `Task.*`; namespaces are `TaskManager.*`.
 - Every async method takes a `CancellationToken` (CO-04).
-- Target framework: `net8.0`. Nullable and ImplicitUsings are enabled.
+- Target framework: `net8.0`. Nullable and ImplicitUsings are enabled. Stay on .NET 8. Do not suggest upgrading.
+
+## Modern code and up-to-date libraries
+
+- Use current, idiomatic C# 12 syntax: file-scoped namespaces, collection expressions (`[]`), primary constructors, pattern matching, `required` members, and raw string literals where they help.
+- Use the latest stable versions of NuGet and npm packages that support .NET 8. Do not use deprecated packages or APIs.
+- Before adding a library, propose it (name, version, and why) and wait for approval.
 
 ## Commands
 

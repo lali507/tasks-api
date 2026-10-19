@@ -9,5 +9,5 @@ public class Project
     public DateTime CreatedAt { get; set; }
 
     // EN-02-R2: navigation only; stored in TaskItem.ProjectId
-    public ICollection<TaskItem> Tasks { get; set; } = new List<TaskItem>();
+    public ICollection<TaskItem> Tasks { get; set; } = [];
 }

@@ -13,5 +13,5 @@ public class User
     public DateTime CreatedAt { get; set; }
 
     // EN-01-R6: navigation only; stored in TaskItem.TakenByUserId
-    public ICollection<TaskItem> TakenTasks { get; set; } = new List<TaskItem>();
+    public ICollection<TaskItem> TakenTasks { get; set; } = [];
 }
