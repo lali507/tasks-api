@@ -35,7 +35,7 @@ namespace TaskManager.Data.Migrations
 
                     b.HasIndex("LabelId");
 
-                    b.ToTable("TaskItemLabel");
+                    b.ToTable("TaskItemLabel", (string)null);
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.Label", b =>
@@ -56,7 +56,7 @@ namespace TaskManager.Data.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Labels");
+                    b.ToTable("Labels", (string)null);
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.Project", b =>
@@ -84,7 +84,7 @@ namespace TaskManager.Data.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Projects");
+                    b.ToTable("Projects", (string)null);
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.TaskItem", b =>
@@ -94,6 +94,9 @@ namespace TaskManager.Data.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CompletedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -130,7 +133,7 @@ namespace TaskManager.Data.Migrations
 
                     b.HasIndex("TakenByUserId");
 
-                    b.ToTable("TaskItems");
+                    b.ToTable("TaskItems", (string)null);
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.User", b =>
@@ -168,7 +171,7 @@ namespace TaskManager.Data.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("TaskItemLabel", b =>

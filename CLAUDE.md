@@ -54,6 +54,10 @@ dotnet build Task.slnx
 dotnet test Task.slnx
 dotnet run --project Task.api
 dotnet user-secrets list --project Task.api
+
+# EF Core migrations (dotnet-ef is a local tool: run `dotnet tool restore` once after cloning)
+dotnet ef migrations add <Name> --project Task.Data --startup-project Task.api
+dotnet ef database update --project Task.Data --startup-project Task.api
 ```
 
 ## Secrets (IN-01, DP-02-R1, DP-03-R3)
