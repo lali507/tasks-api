@@ -38,6 +38,9 @@ public class ProjectRepository(TaskDbContext db) : IProjectRepository
     public Task<bool> HasTasksAsync(int id, CancellationToken ct) =>
         db.TaskItems.AsNoTracking().AnyAsync(t => t.ProjectId == id, ct);
 
+    public Task<int> CountTasksAsync(int id, CancellationToken ct) =>
+        db.TaskItems.AsNoTracking().CountAsync(t => t.ProjectId == id, ct);
+
     public Task<Project?> FindAsync(int id, CancellationToken ct) =>
         db.Projects.FirstOrDefaultAsync(p => p.Id == id, ct);
 

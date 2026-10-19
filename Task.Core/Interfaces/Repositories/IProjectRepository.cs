@@ -17,6 +17,9 @@ public interface IProjectRepository
     Task<bool> NameExistsAsync(string name, int? excludeId, CancellationToken ct);
     Task<bool> HasTasksAsync(int id, CancellationToken ct);
 
+    // TaskCount for a single project (FN-AD-07 response)
+    Task<int> CountTasksAsync(int id, CancellationToken ct);
+
     Task<Project?> FindAsync(int id, CancellationToken ct);
     Task<WriteResult> AddAsync(Project project, CancellationToken ct);
     Task<WriteResult> UpdateAsync(Project project, CancellationToken ct);
