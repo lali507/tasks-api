@@ -60,6 +60,14 @@ dotnet ef migrations add <Name> --project Task.Data --startup-project Task.api
 dotnet ef database update --project Task.Data --startup-project Task.api
 ```
 
+## Deviations from the spec
+
+Approved by the user. List each one in the README (task 45).
+
+| Rule | Spec says | Implemented | Why |
+|---|---|---|---|
+| SV-01, AP-05 | AutoMapper Profiles, registered in Program.cs | Mapperly (`Riok.Mapperly`) static mappers in `Task.Service/Mapping/`, no DI registration | Free AutoMapper (≤14.0.0, MIT) has a High vulnerability (GHSA-rvv3-g6hj-g44x); fixed versions (15+) need a commercial license |
+
 ## Secrets (IN-01, DP-02-R1, DP-03-R3)
 
 - Never commit secrets. `.env` is local only; `.env.example` (keys without values) is committed.

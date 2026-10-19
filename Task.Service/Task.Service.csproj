@@ -4,11 +4,18 @@
     <ProjectReference Include="..\Task.Core\Task.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Source generator: no runtime assembly is shipped -->
+    <PackageReference Include="Riok.Mapperly" Version="4.3.1" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>TaskManager.Service</RootNamespace>
+    <!-- SV-01: a DTO member without a mapping fails the build -->
+    <WarningsAsErrors>$(WarningsAsErrors);RMG012</WarningsAsErrors>
   </PropertyGroup>
 
 </Project>
