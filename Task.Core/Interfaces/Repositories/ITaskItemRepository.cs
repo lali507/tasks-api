@@ -20,5 +20,7 @@ public interface ITaskItemRepository
     Task<TaskItem?> FindAsync(int id, CancellationToken ct);
     Task<WriteResult> AddAsync(TaskItem task, CancellationToken ct);
     Task<WriteResult> UpdateAsync(TaskItem task, CancellationToken ct);
-    Task DeleteAsync(TaskItem task, CancellationToken ct);
+
+    // Returns ConcurrencyConflict if the task changed (e.g. was taken) since FindAsync (FN-AD-11)
+    Task<WriteResult> DeleteAsync(TaskItem task, CancellationToken ct);
 }
