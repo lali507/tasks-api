@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TaskManager.Core.Entities;
+using TaskManager.Data.Seed;
 
 namespace TaskManager.Data;
 
@@ -16,5 +17,8 @@ public class TaskDbContext(DbContextOptions<TaskDbContext> options) : DbContext(
         // DA-02: case-insensitive unique columns
         modelBuilder.HasPostgresExtension("citext");
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(TaskDbContext).Assembly);
+
+        // GN-05
+        modelBuilder.Seed();
     }
 }

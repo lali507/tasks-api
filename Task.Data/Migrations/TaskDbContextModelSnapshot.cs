@@ -36,6 +36,413 @@ namespace TaskManager.Data.Migrations
                     b.HasIndex("LabelId");
 
                     b.ToTable("TaskItemLabel", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            TaskItemId = 1,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 2,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 4,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 5,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 5,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 7,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 8,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 10,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 10,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 11,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 13,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 14,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 16,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 17,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 19,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 20,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 20,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 22,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 23,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 25,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 25,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 26,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 28,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 29,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 31,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 32,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 34,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 35,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 35,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 37,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 38,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 40,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 40,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 41,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 43,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 44,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 46,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 47,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 49,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 50,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 50,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 52,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 53,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 55,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 55,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 56,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 58,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 59,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 61,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 62,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 64,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 65,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 65,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 67,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 68,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 70,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 70,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 71,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 73,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 74,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 76,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 77,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 79,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 80,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 80,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 82,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 83,
+                            LabelId = 3
+                        },
+                        new
+                        {
+                            TaskItemId = 85,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 85,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 86,
+                            LabelId = 6
+                        },
+                        new
+                        {
+                            TaskItemId = 88,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 89,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 91,
+                            LabelId = 1
+                        },
+                        new
+                        {
+                            TaskItemId = 92,
+                            LabelId = 2
+                        },
+                        new
+                        {
+                            TaskItemId = 94,
+                            LabelId = 4
+                        },
+                        new
+                        {
+                            TaskItemId = 95,
+                            LabelId = 5
+                        },
+                        new
+                        {
+                            TaskItemId = 95,
+                            LabelId = 9
+                        },
+                        new
+                        {
+                            TaskItemId = 97,
+                            LabelId = 7
+                        },
+                        new
+                        {
+                            TaskItemId = 98,
+                            LabelId = 8
+                        },
+                        new
+                        {
+                            TaskItemId = 100,
+                            LabelId = 10
+                        },
+                        new
+                        {
+                            TaskItemId = 100,
+                            LabelId = 4
+                        });
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.Label", b =>
@@ -57,6 +464,58 @@ namespace TaskManager.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Labels", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "באג"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "פיצ'ר"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "דחוף"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "עיצוב"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "שרת"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "לקוח"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "בדיקות"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "תיעוד"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "ביצועים"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "אבטחה"
+                        });
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.Project", b =>
@@ -85,6 +544,78 @@ namespace TaskManager.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Projects", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2026, 1, 2, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "בניית אתר תדמית חדש לחברה",
+                            Name = "אתר החברה"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2026, 1, 2, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפליקציה לאנדרואיד ול-iOS עבור לקוחות",
+                            Name = "אפליקציית מובייל"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2026, 1, 2, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "ניהול קשרי לקוחות ותהליכי מכירה",
+                            Name = "מערכת CRM"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2026, 1, 2, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "חנות אונליין עם תשלום מאובטח",
+                            Name = "חנות מקוונת"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2026, 1, 2, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "חישוב שכר והפקת דוחות לעובדים",
+                            Name = "מערכת שכר"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(2026, 1, 2, 13, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פורטל פנימי למידע, הודעות וטפסים",
+                            Name = "פורטל עובדים"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedAt = new DateTime(2026, 1, 2, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "ניהול מלאי, ספקים ומחסנים",
+                            Name = "מערכת מלאי"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedAt = new DateTime(2026, 1, 2, 15, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "לוחות מחוונים ודוחות להנהלה",
+                            Name = "דוחות ניהול"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedAt = new DateTime(2026, 1, 2, 16, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הזמנת תורים ושירותים אונליין",
+                            Name = "מערכת הזמנות"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedAt = new DateTime(2026, 1, 2, 17, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העברת השרתים לענן והקמת ניטור",
+                            Name = "תשתית ענן"
+                        });
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.TaskItem", b =>
@@ -134,6 +665,1008 @@ namespace TaskManager.Data.Migrations
                     b.HasIndex("TakenByUserId");
 
                     b.ToTable("TaskItems", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2026, 1, 3, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "אפיון דרישות – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2026, 1, 3, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2026, 1, 3, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2026, 1, 3, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2026, 1, 3, 13, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(2026, 1, 3, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedAt = new DateTime(2026, 1, 3, 15, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "תיקון באגים – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedAt = new DateTime(2026, 1, 3, 16, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedAt = new DateTime(2026, 1, 3, 17, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedAt = new DateTime(2026, 1, 3, 18, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט אתר החברה",
+                            ProjectId = 1,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – אתר החברה",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedAt = new DateTime(2026, 1, 3, 19, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "אפיון דרישות – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedAt = new DateTime(2026, 1, 3, 20, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedAt = new DateTime(2026, 1, 3, 21, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedAt = new DateTime(2026, 1, 3, 22, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedAt = new DateTime(2026, 1, 3, 23, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedAt = new DateTime(2026, 1, 4, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedAt = new DateTime(2026, 1, 4, 1, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "תיקון באגים – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedAt = new DateTime(2026, 1, 4, 2, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedAt = new DateTime(2026, 1, 4, 3, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedAt = new DateTime(2026, 1, 4, 4, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט אפליקציית מובייל",
+                            ProjectId = 2,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – אפליקציית מובייל",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedAt = new DateTime(2026, 1, 4, 5, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "אפיון דרישות – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreatedAt = new DateTime(2026, 1, 4, 6, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreatedAt = new DateTime(2026, 1, 4, 7, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CreatedAt = new DateTime(2026, 1, 4, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CreatedAt = new DateTime(2026, 1, 4, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CreatedAt = new DateTime(2026, 1, 4, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CreatedAt = new DateTime(2026, 1, 4, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "תיקון באגים – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CreatedAt = new DateTime(2026, 1, 4, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CreatedAt = new DateTime(2026, 1, 4, 13, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CreatedAt = new DateTime(2026, 1, 4, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט מערכת CRM",
+                            ProjectId = 3,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – מערכת CRM",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CreatedAt = new DateTime(2026, 1, 4, 15, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "אפיון דרישות – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CreatedAt = new DateTime(2026, 1, 4, 16, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 33,
+                            CreatedAt = new DateTime(2026, 1, 4, 17, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 34,
+                            CreatedAt = new DateTime(2026, 1, 4, 18, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 35,
+                            CreatedAt = new DateTime(2026, 1, 4, 19, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 36,
+                            CreatedAt = new DateTime(2026, 1, 4, 20, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 37,
+                            CreatedAt = new DateTime(2026, 1, 4, 21, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "תיקון באגים – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 38,
+                            CreatedAt = new DateTime(2026, 1, 4, 22, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 39,
+                            CreatedAt = new DateTime(2026, 1, 4, 23, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 40,
+                            CreatedAt = new DateTime(2026, 1, 5, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט חנות מקוונת",
+                            ProjectId = 4,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – חנות מקוונת",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 41,
+                            CreatedAt = new DateTime(2026, 1, 5, 1, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "אפיון דרישות – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 42,
+                            CreatedAt = new DateTime(2026, 1, 5, 2, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 43,
+                            CreatedAt = new DateTime(2026, 1, 5, 3, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 44,
+                            CreatedAt = new DateTime(2026, 1, 5, 4, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 45,
+                            CreatedAt = new DateTime(2026, 1, 5, 5, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 46,
+                            CreatedAt = new DateTime(2026, 1, 5, 6, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 47,
+                            CreatedAt = new DateTime(2026, 1, 5, 7, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "תיקון באגים – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 48,
+                            CreatedAt = new DateTime(2026, 1, 5, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 49,
+                            CreatedAt = new DateTime(2026, 1, 5, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 50,
+                            CreatedAt = new DateTime(2026, 1, 5, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט מערכת שכר",
+                            ProjectId = 5,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – מערכת שכר",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 51,
+                            CreatedAt = new DateTime(2026, 1, 5, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "אפיון דרישות – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 52,
+                            CreatedAt = new DateTime(2026, 1, 5, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 53,
+                            CreatedAt = new DateTime(2026, 1, 5, 13, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 54,
+                            CreatedAt = new DateTime(2026, 1, 5, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 55,
+                            CreatedAt = new DateTime(2026, 1, 5, 15, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 56,
+                            CreatedAt = new DateTime(2026, 1, 5, 16, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 57,
+                            CreatedAt = new DateTime(2026, 1, 5, 17, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "תיקון באגים – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 58,
+                            CreatedAt = new DateTime(2026, 1, 5, 18, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 59,
+                            CreatedAt = new DateTime(2026, 1, 5, 19, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 60,
+                            CreatedAt = new DateTime(2026, 1, 5, 20, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט פורטל עובדים",
+                            ProjectId = 6,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – פורטל עובדים",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 61,
+                            CreatedAt = new DateTime(2026, 1, 5, 21, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "אפיון דרישות – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 62,
+                            CreatedAt = new DateTime(2026, 1, 5, 22, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 63,
+                            CreatedAt = new DateTime(2026, 1, 5, 23, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 64,
+                            CreatedAt = new DateTime(2026, 1, 6, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 65,
+                            CreatedAt = new DateTime(2026, 1, 6, 1, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 66,
+                            CreatedAt = new DateTime(2026, 1, 6, 2, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 67,
+                            CreatedAt = new DateTime(2026, 1, 6, 3, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "תיקון באגים – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 68,
+                            CreatedAt = new DateTime(2026, 1, 6, 4, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 69,
+                            CreatedAt = new DateTime(2026, 1, 6, 5, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 70,
+                            CreatedAt = new DateTime(2026, 1, 6, 6, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט מערכת מלאי",
+                            ProjectId = 7,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – מערכת מלאי",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 71,
+                            CreatedAt = new DateTime(2026, 1, 6, 7, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "אפיון דרישות – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 72,
+                            CreatedAt = new DateTime(2026, 1, 6, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 73,
+                            CreatedAt = new DateTime(2026, 1, 6, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 74,
+                            CreatedAt = new DateTime(2026, 1, 6, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 75,
+                            CreatedAt = new DateTime(2026, 1, 6, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 76,
+                            CreatedAt = new DateTime(2026, 1, 6, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 77,
+                            CreatedAt = new DateTime(2026, 1, 6, 13, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "תיקון באגים – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 78,
+                            CreatedAt = new DateTime(2026, 1, 6, 14, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 79,
+                            CreatedAt = new DateTime(2026, 1, 6, 15, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 80,
+                            CreatedAt = new DateTime(2026, 1, 6, 16, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט דוחות ניהול",
+                            ProjectId = 8,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – דוחות ניהול",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 81,
+                            CreatedAt = new DateTime(2026, 1, 6, 17, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "אפיון דרישות – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 82,
+                            CreatedAt = new DateTime(2026, 1, 6, 18, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 83,
+                            CreatedAt = new DateTime(2026, 1, 6, 19, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 84,
+                            CreatedAt = new DateTime(2026, 1, 6, 20, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 85,
+                            CreatedAt = new DateTime(2026, 1, 6, 21, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 86,
+                            CreatedAt = new DateTime(2026, 1, 6, 22, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 87,
+                            CreatedAt = new DateTime(2026, 1, 6, 23, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "תיקון באגים – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 88,
+                            CreatedAt = new DateTime(2026, 1, 7, 0, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 89,
+                            CreatedAt = new DateTime(2026, 1, 7, 1, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 90,
+                            CreatedAt = new DateTime(2026, 1, 7, 2, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט מערכת הזמנות",
+                            ProjectId = 9,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – מערכת הזמנות",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 91,
+                            CreatedAt = new DateTime(2026, 1, 7, 3, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "אפיון דרישות עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "אפיון דרישות – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 92,
+                            CreatedAt = new DateTime(2026, 1, 7, 4, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "עיצוב מסכים עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "עיצוב מסכים – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 93,
+                            CreatedAt = new DateTime(2026, 1, 7, 5, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "הקמת בסיס נתונים עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "הקמת בסיס נתונים – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 94,
+                            CreatedAt = new DateTime(2026, 1, 7, 6, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד שרת עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "פיתוח צד שרת – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 95,
+                            CreatedAt = new DateTime(2026, 1, 7, 7, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "פיתוח צד לקוח עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "פיתוח צד לקוח – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 96,
+                            CreatedAt = new DateTime(2026, 1, 7, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת בדיקות עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "כתיבת בדיקות – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 97,
+                            CreatedAt = new DateTime(2026, 1, 7, 9, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "תיקון באגים עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "תיקון באגים – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 98,
+                            CreatedAt = new DateTime(2026, 1, 7, 10, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "שיפור ביצועים עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "שיפור ביצועים – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 99,
+                            CreatedAt = new DateTime(2026, 1, 7, 11, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "כתיבת תיעוד עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "כתיבת תיעוד – תשתית ענן",
+                            Xmin = 0u
+                        },
+                        new
+                        {
+                            Id = 100,
+                            CreatedAt = new DateTime(2026, 1, 7, 12, 0, 0, 0, DateTimeKind.Utc),
+                            Description = "העלאה לאוויר עבור הפרויקט תשתית ענן",
+                            ProjectId = 10,
+                            Status = "Open",
+                            Title = "העלאה לאוויר – תשתית ענן",
+                            Xmin = 0u
+                        });
                 });
 
             modelBuilder.Entity("TaskManager.Core.Entities.User", b =>
@@ -172,6 +1705,278 @@ namespace TaskManager.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "מנהל המערכת",
+                            Email = "admin@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEE5k5ddjrJetqI1M2qMV43Wk4vJDwu/RKylBc4ibPQmou8GEspyUaQPnl4/YkPYmSw==",
+                            Role = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 1, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "דנה כהן",
+                            Email = "member02@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBHsijZrUYxG3pey5UOPMPESjxtVleFPJgljOaHJoY2StfjQYAzhnkILH8aavu1sEQ==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 2, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "יוסי לוי",
+                            Email = "member03@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEF5LUmT4pouBsnlQlSP/865LPeU2WKgzIO7JHbGVWfGmqyd+wpjBpjMduZevEmlWjg==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 3, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "מיכל אברהם",
+                            Email = "member04@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC3JMflVxJFleAfDNJgSEMoopxrZLOdsZWEf+M4wV3iVPWyiysjBfiqtxf0Md8yhGA==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 4, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "אבי מזרחי",
+                            Email = "member05@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDa9w1TCSQ2AWn2MFaWapxQTRUngo4q6Y4lqcYnso2QquhZKWMZEp9k4nJy9YFPe7Q==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 5, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "נועה פרץ",
+                            Email = "member06@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPyybscE1G9LPfCR5ttVL8pEl3LvvWgzj9CKLdyjWW3pwOsnRoA1cp+auipPoY9+5w==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 6, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "רון ביטון",
+                            Email = "member07@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJm2QmwN58wi+wV+P2xXQ94DfwLXkoWAFDtBqFuwVgGRvGwPVyFFoG6zO2H13P7EOg==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 7, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "שירה דהן",
+                            Email = "member08@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEM0MOy/qQWruNEYi7pd1CxXIjnWP8GtO5hcvfn4yzWmRtWW9g4MTmiJjhO97IF1y0g==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 8, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "עומר אזולאי",
+                            Email = "member09@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN8gkrDWynoYgq5g3N7dZdhHQSFrH5HMYHreuYj5wCD+VygXgcvzgtZOlH0dfcgfeA==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 9, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "תמר פרידמן",
+                            Email = "member10@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBiP8dHXlSn7NLQapVYGyzfrxvgEnbY4mE1d2PIWQO10JrTL3sDhHu6ZzxcJ1Tlciw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 10, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "איתי שפירא",
+                            Email = "member11@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKzjBuYl5A33dbnI6oXK+X5gyLAeq3uZifuNkMqbij6TyRZAaCyKRPWSSrh5+ZQRyw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 11, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "יעל גולן",
+                            Email = "member12@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBVp3k27qTmc/K1MaVF7H3p+EsYa19LgMw2v3Jb58JoSBIcOb9Qk5/x4c8ZIpyG80w==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 12, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "גיא אוחיון",
+                            Email = "member13@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAW1tPIltG+UtP3ocTxoaQlkygREI8Ia0EiQdQ7KGxozThcENXaSqXvmZ+O+M7gpvQ==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 13, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "ליאת חדד",
+                            Email = "member14@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJIyu8oEcObM9NXqImUph4SRHVhvklKCCZHZ7VGgyOU55pLPs/URMEqS5qQ37nx8ZQ==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 14, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "אלון סויסה",
+                            Email = "member15@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDcJoFA1JamAT+H5xqn04tpenxT+Dw0RIZ58FLn9LOwfG9onIy5cgJnocKr4sDoI4A==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 15, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "מאיה רוזן",
+                            Email = "member16@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOdW5vyqolh8JD2GCxKo7/aOalRshF5FKJcy1Jufy+JbzjcohFRo2hhlPp23jEkMCg==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 16, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "דוד קליין",
+                            Email = "member17@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAOa7OWYfm6acCAPmB3HGP3dbXSYvqIU0GXPyfhtvjyUJktv/AvIXU4XQNohU/e79g==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 17, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "רותם בן דוד",
+                            Email = "member18@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOmcjb88bBkoMeWnxbj2kYN44gm4K2N99fyE5G+a/TlE0/1+CFghDAZ0ba9ENlkdOA==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 18, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "אורי וקנין",
+                            Email = "member19@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPXrh0HMH+dQ6JmfTIUsMD259Nw0mvRdyIRNSDER5wYYKCrcHxc82SEqrxtpjFVNIw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 19, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "הילה אשכנזי",
+                            Email = "member20@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEC5iwDlgBk1yqbP64a30e0aFZkmh2BQykJsEYw4yaDeaXZfpvN2eISVOnTpwWOVRXw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 20, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "ניר גבאי",
+                            Email = "member21@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDGtNyX6UcUTqyoxSIVvTZN7PfabJY14RCswv329Mf4Q79czgx67ouSgYt+bdXwcbw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 21, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "שני טל",
+                            Email = "member22@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEILPYwH92N4yh29FriguXtLeoOHOE9PLjB/5QyZaSTP54N4vEcj+fIFajD2fs2/2bg==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 22, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "עידו כץ",
+                            Email = "member23@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBC5wyg8e5cJNT/Fx1v4AI37wopFBUHwiRpkOe0pZ16ekZ9jiV91yvU01J/RHhXyYQ==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 23, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "אסנת יוסף",
+                            Email = "member24@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAIUxhSUWDY2HfT0QzMuJ6SSPObE3qZD5b152/eDCrpqSrPvpLBHBHSnONPqdS9Gug==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 24, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "בועז עמר",
+                            Email = "member25@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHqw+++tAWL20y9zkOkWr0SDuW1BTv4ZBk2QxAggHi3VKajib30RGJk9g/s5CbPLZQ==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 25, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "קרן שטרן",
+                            Email = "member26@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAECxksVoqqAyb996nxYE2ltID3XsGXo41I75SrkyKN8BIxMYgALHweBtsUrCXV2jc/g==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 26, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "תום ברק",
+                            Email = "member27@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAENNnO6Pe6FaLSjQphp4OQuWGjxdCmscT/XSGsQrITV2vIgKAK6Mtr0WukiXxogoKOw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 27, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "ענבל נחום",
+                            Email = "member28@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKkVy9YNrFFnef7SwjoI19U+5QGIoqHI2yOoeHrnieHANYrnMHtS1zC75QkXFTU9ig==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 28, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "אריאל זילברמן",
+                            Email = "member29@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEElSskOd8DNJnMdkH60VsGCnkmmjBpCJdKpD2ao72ZCgxMnVGmv5WHF3BvYHP1CgRw==",
+                            Role = "Member"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CreatedAt = new DateTime(2026, 1, 1, 8, 29, 0, 0, DateTimeKind.Utc),
+                            DisplayName = "סיון מלכה",
+                            Email = "member30@example.com",
+                            PasswordHash = "AQAAAAIAAYagAAAAEO6uK89XODgnYU0OryfgzS7QG9YFrEWXPv5d9ELY8+qngZsv8mTz24mjepPxBYJWAA==",
+                            Role = "Member"
+                        });
                 });
 
             modelBuilder.Entity("TaskItemLabel", b =>
