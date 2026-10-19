@@ -3,12 +3,19 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <RootNamespace>TaskManager.Api</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>0753fc99-cee9-4696-962b-3866ec039bf3</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Task.Core\Task.Core.csproj" />
+    <ProjectReference Include="..\Task.Data\Task.Data.csproj" />
+    <ProjectReference Include="..\Task.Service\Task.Service.csproj" />
   </ItemGroup>
 
 </Project>
