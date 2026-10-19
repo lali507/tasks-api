@@ -11,6 +11,7 @@ Task management system: an ASP.NET Core 8 Web API with PostgreSQL, a React clien
 
 ## Workflow
 
+- **Get the user's approval before any change or decision.** Before editing files, running commands that change state (git commit/push, migrations, docker, package installs), or making any decision the spec does not dictate (naming, structure, libraries, deviations, workarounds), describe what you intend to do and why, then wait for explicit approval. Read-only checks are fine without asking. If you find something unexpected while working, stop and ask; do not fix it on your own.
 - Before starting a task, tell the user which one it is: number, name, details, rule references, and done criterion from `dev-tasks.md`. Then do the work.
 - Do one task at a time. When it's done, check the done criterion (build, tests, or a manual check), then commit with a message like `<Summary> (task N)`, and push to `main`.
 - `main` is the deployment branch (DP-03-R1).
