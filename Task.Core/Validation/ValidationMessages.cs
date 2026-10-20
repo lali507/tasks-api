@@ -9,6 +9,9 @@ public static class ValidationMessages
     public const string Email = "פורמט אימייל לא תקין";
     public const string PasswordComplexity = "הסיסמה חייבת לכלול אות וספרה";
 
+    // GN-02: a list parameter out of range or of the wrong type (title "פרמטר לא תקין")
+    public const string InvalidValue = "ערך לא תקין";
+
     // FN-AD-09-R1: a project or label id in the body that does not exist (errors.ProjectId / errors.LabelIds)
     public const string NotFound = "לא נמצא";
 
