@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
 using TaskManager.Core.DTOs.Queries;
 using TaskManager.Core.DTOs.Requests;
@@ -22,16 +24,19 @@ public class ProjectsController(IProjectService projects) : ApiControllerBase
         OkOrProblem(await projects.GetByIdAsync(id, ct));
 
     // FN-AD-06
+    [Authorize(Roles = Roles.Admin)]
     [HttpPost]
     public async Task<ActionResult<ProjectResponse>> Create([FromBody] ProjectRequest request, CancellationToken ct) =>
         CreatedOrProblem(await projects.CreateAsync(User.GetUserId(), request, ct), p => $"/api/projects/{p.Id}");
 
     // FN-AD-07
+    [Authorize(Roles = Roles.Admin)]
     [HttpPut("{id:int}")]
     public async Task<ActionResult<ProjectResponse>> Update([FromRoute] int id, [FromBody] ProjectRequest request, CancellationToken ct) =>
         OkOrProblem(await projects.UpdateAsync(User.GetUserId(), id, request, ct));
 
     // FN-AD-08
+    [Authorize(Roles = Roles.Admin)]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> Delete([FromRoute] int id, CancellationToken ct) =>
         NoContentOrProblem(await projects.DeleteAsync(User.GetUserId(), id, ct));

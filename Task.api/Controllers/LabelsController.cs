@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
 using TaskManager.Core.DTOs.Requests;
 using TaskManager.Core.DTOs.Responses;
@@ -16,16 +18,19 @@ public class LabelsController(ILabelService labels) : ApiControllerBase
         OkOrProblem(await labels.GetAllAsync(ct));
 
     // FN-AD-12
+    [Authorize(Roles = Roles.Admin)]
     [HttpPost]
     public async Task<ActionResult<LabelResponse>> Create([FromBody] LabelRequest request, CancellationToken ct) =>
         CreatedOrProblem(await labels.CreateAsync(User.GetUserId(), request, ct), l => $"/api/labels/{l.Id}");
 
     // FN-AD-13
+    [Authorize(Roles = Roles.Admin)]
     [HttpPut("{id:int}")]
     public async Task<ActionResult<LabelResponse>> Update([FromRoute] int id, [FromBody] LabelRequest request, CancellationToken ct) =>
         OkOrProblem(await labels.UpdateAsync(User.GetUserId(), id, request, ct));
 
     // FN-AD-14
+    [Authorize(Roles = Roles.Admin)]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> Delete([FromRoute] int id, CancellationToken ct) =>
         NoContentOrProblem(await labels.DeleteAsync(User.GetUserId(), id, ct));

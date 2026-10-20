@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
 using TaskManager.Core.DTOs.Queries;
 using TaskManager.Core.DTOs.Requests;
@@ -22,26 +24,31 @@ public class TasksController(ITaskService tasks) : ApiControllerBase
         OkOrProblem(await tasks.GetByIdAsync(id, ct));
 
     // FN-AD-09
+    [Authorize(Roles = Roles.Admin)]
     [HttpPost]
     public async Task<ActionResult<TaskResponse>> Create([FromBody] TaskRequest request, CancellationToken ct) =>
         CreatedOrProblem(await tasks.CreateAsync(User.GetUserId(), request, ct), t => $"/api/tasks/{t.Id}");
 
     // FN-AD-10
+    [Authorize(Roles = Roles.Admin)]
     [HttpPut("{id:int}")]
     public async Task<ActionResult<TaskResponse>> Update([FromRoute] int id, [FromBody] TaskRequest request, CancellationToken ct) =>
         OkOrProblem(await tasks.UpdateAsync(User.GetUserId(), id, request, ct));
 
     // FN-AD-11
+    [Authorize(Roles = Roles.Admin)]
     [HttpDelete("{id:int}")]
     public async Task<ActionResult> Delete([FromRoute] int id, CancellationToken ct) =>
         NoContentOrProblem(await tasks.DeleteAsync(User.GetUserId(), id, ct));
 
-    // FN-MB-06: no body; the user comes from the token
+    // FN-MB-06: no body; the user comes from the token; an Admin -> 403 (RL-03)
+    [Authorize(Roles = Roles.Member)]
     [HttpPut("{id:int}/assignee")]
     public async Task<ActionResult<TaskResponse>> Take([FromRoute] int id, CancellationToken ct) =>
         OkOrProblem(await tasks.TakeAsync(User.GetUserId(), id, ct));
 
-    // FN-MB-07: no body (FN-MB-07-R1)
+    // FN-MB-07: no body (FN-MB-07-R1); an Admin -> 403
+    [Authorize(Roles = Roles.Member)]
     [HttpPut("{id:int}/completion")]
     public async Task<ActionResult<TaskResponse>> Complete([FromRoute] int id, CancellationToken ct) =>
         OkOrProblem(await tasks.CompleteAsync(User.GetUserId(), id, ct));

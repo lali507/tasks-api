@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
 using TaskManager.Core.DTOs.Queries;
 using TaskManager.Core.DTOs.Requests;
@@ -8,6 +10,8 @@ using TaskManager.Core.Interfaces.Services;
 namespace TaskManager.Api.Controllers;
 
 // AP-01 to AP-03: thin controller over IUserService
+// AP-01: Admin only
+[Authorize(Roles = Roles.Admin)]
 [Route("api/users")]
 public class UsersController(IUserService users) : ApiControllerBase
 {

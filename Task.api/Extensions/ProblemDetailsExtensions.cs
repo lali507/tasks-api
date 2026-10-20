@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.WebUtilities;
 using TaskManager.Core.Results;
 using TaskManager.Core.Validation;
 
@@ -16,6 +17,18 @@ public static class ProblemDetailsExtensions
         {
             context.ProblemDetails.Extensions.Remove("traceId");
             context.ProblemDetails.Extensions["correlationId"] = context.HttpContext.TraceIdentifier;
+
+            // GN-03-R2, GN-07: a response the framework produced (e.g. 401/403 from MW-04) has an English default title
+            var status = context.ProblemDetails.Status ?? context.HttpContext.Response.StatusCode;
+            if (context.ProblemDetails.Title is null || context.ProblemDetails.Title == ReasonPhrases.GetReasonPhrase(status))
+                context.ProblemDetails.Title = status switch
+                {
+                    StatusCodes.Status401Unauthorized => ErrorMessages.LoginRequired,
+                    StatusCodes.Status403Forbidden => ErrorMessages.Forbidden,
+                    StatusCodes.Status404NotFound => ErrorMessages.NotFound,
+                    StatusCodes.Status500InternalServerError => ErrorMessages.ServerError,
+                    _ => context.ProblemDetails.Title,
+                };
         });
 
         // A body that is not valid JSON: no English parser text in errors

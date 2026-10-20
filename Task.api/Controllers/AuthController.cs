@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Api.Auth;
 using TaskManager.Core.DTOs.Requests;
@@ -7,6 +8,8 @@ using TaskManager.Core.Interfaces.Services;
 namespace TaskManager.Api.Controllers;
 
 // AP-04: the token is created here, after the Service succeeded (GN-04-R1)
+// FN-GU-01, FN-GU-02: guests
+[AllowAnonymous]
 [Route("api/auth")]
 public class AuthController(IAuthService auth, JwtTokenFactory tokens) : ApiControllerBase
 {
