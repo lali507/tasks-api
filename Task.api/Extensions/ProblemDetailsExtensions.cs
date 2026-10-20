@@ -18,8 +18,14 @@ public static class ProblemDetailsExtensions
             context.ProblemDetails.Extensions["correlationId"] = context.HttpContext.TraceIdentifier;
         });
 
+        // A body that is not valid JSON: no English parser text in errors
+        services.Configure<JsonOptions>(options => options.AllowInputFormatterExceptionMessages = false);
+
         services.Configure<MvcOptions>(options =>
         {
+            // The DTO attributes decide what is required; no extra English "The request field is required."
+            options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+
             // GN-07-R1: Hebrew field messages for values that cannot be bound at all (e.g. status=Closed)
             var messages = options.ModelBindingMessageProvider;
             messages.SetAttemptedValueIsInvalidAccessor((_, _) => ValidationMessages.InvalidValue);
@@ -41,11 +47,11 @@ public static class ProblemDetailsExtensions
             var fromQuery = context.ActionDescriptor.Parameters.Any(p => p.BindingInfo?.BindingSource == BindingSource.Query);
             var title = fromQuery ? ErrorMessages.InvalidParameter : ErrorMessages.InvalidData;
 
-            // A JSON value that cannot be read has no message of its own
+            // A JSON value that cannot be read has no message of its own, and its key is a JSON path ("$.projectId" -> "ProjectId")
             var modelState = new ModelStateDictionary();
             foreach (var (key, entry) in context.ModelState)
                 foreach (var error in entry.Errors)
-                    modelState.AddModelError(key, string.IsNullOrEmpty(error.ErrorMessage) ? ValidationMessages.InvalidValue : error.ErrorMessage);
+                    modelState.AddModelError(FieldName(key), string.IsNullOrEmpty(error.ErrorMessage) ? ValidationMessages.InvalidValue : error.ErrorMessage);
 
             var factory = context.HttpContext.RequestServices.GetRequiredService<ProblemDetailsFactory>();
             var problem = factory.CreateValidationProblemDetails(context.HttpContext, modelState, StatusCodes.Status400BadRequest, title);
@@ -54,4 +60,7 @@ public static class ProblemDetailsExtensions
 
         return services;
     }
+
+    private static string FieldName(string key) =>
+        key.StartsWith("$.") && key.Length > 2 ? char.ToUpperInvariant(key[2]) + key[3..] : key;
 }
