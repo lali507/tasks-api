@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using TaskManager.Core.Results;
 
 namespace TaskManager.Api.Controllers;
@@ -21,8 +22,13 @@ public abstract class ApiControllerBase : ControllerBase
     {
         if (result.Status == ResultStatus.Validation)
         {
-            var errors = result.Errors!.ToDictionary(e => e.Key, e => e.Value);
-            return ValidationProblem(new ValidationProblemDetails(errors) { Status = StatusCodes.Status400BadRequest, Title = result.Title });
+            var modelState = new ModelStateDictionary();
+            foreach (var (field, messages) in result.Errors!)
+                foreach (var message in messages)
+                    modelState.AddModelError(field, message);
+            // Through the factory, so correlationId is added like on every other error (GN-03)
+            return ValidationProblem(ProblemDetailsFactory.CreateValidationProblemDetails(
+                HttpContext, modelState, StatusCodes.Status400BadRequest, result.Title));
         }
 
         var status = result.Status switch
