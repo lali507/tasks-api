@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using TaskManager.Api.Auth;
 using TaskManager.Core.DTOs.Responses;
 using TaskManager.Core.Enums;
@@ -15,6 +16,9 @@ public class ApiFactory : WebApplicationFactory<Program>
 {
     public const string TestJwtKey = "test-only-signing-key-that-is-long-enough-for-hs256";
 
+    // Everything the API logs (GN-06), next to NLog
+    public LogCollector Logs { get; } = new();
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.UseEnvironment("Development");
@@ -23,6 +27,7 @@ public class ApiFactory : WebApplicationFactory<Program>
             ["ConnectionStrings:DefaultConnection"] = TestDatabase.ConnectionString,
             ["Jwt:Key"] = TestJwtKey,
         }));
+        builder.ConfigureLogging(logging => logging.AddProvider(Logs));
         // Runs after Program's registrations, so a test can replace them
         builder.ConfigureTestServices(ConfigureTestServices);
     }
