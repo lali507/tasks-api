@@ -1,8 +1,11 @@
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
+using TaskManager.Api.Middleware;
 using TaskManager.Api.Options;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces.Repositories;
@@ -43,6 +46,14 @@ builder.Services.AddOptions<ClientCorsOptions>().Bind(builder.Configuration.GetS
 // GN-04-R1, AP-04
 builder.Services.AddSingleton<JwtTokenFactory>();
 
+// GN-08: only the React client; all four methods, and the Authorization header (plus Content-Type for JSON bodies)
+builder.Services.AddCors();
+builder.Services.AddOptions<CorsOptions>().Configure<IOptions<ClientCorsOptions>>((cors, client) =>
+    cors.AddPolicy(ClientCorsPolicy, policy => policy
+        .WithOrigins(client.Value.ClientUrl.TrimEnd('/'))
+        .WithMethods("GET", "POST", "PUT", "DELETE")
+        .WithHeaders("Authorization", "Content-Type")));
+
 // DT-00-R5, CO-02: enums as strings ("Open", "Admin")
 builder.Services.AddControllers()
     .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
@@ -54,7 +65,10 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// GN-01 order: errors -> CorrelationId -> CORS -> Authentication -> Authorization
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<CorrelationIdMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -63,8 +77,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// GN-08-R4: before Authentication, so a preflight OPTIONS without a token passes
+app.UseCors(ClientCorsPolicy);
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+public partial class Program
+{
+    private const string ClientCorsPolicy = "Client";
+}
