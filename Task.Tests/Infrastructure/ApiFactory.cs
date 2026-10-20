@@ -1,6 +1,7 @@
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TaskManager.Api.Auth;
@@ -22,7 +23,8 @@ public class ApiFactory : WebApplicationFactory<Program>
             ["ConnectionStrings:DefaultConnection"] = TestDatabase.ConnectionString,
             ["Jwt:Key"] = TestJwtKey,
         }));
-        builder.ConfigureServices(ConfigureTestServices);
+        // Runs after Program's registrations, so a test can replace them
+        builder.ConfigureTestServices(ConfigureTestServices);
     }
 
     // Controller tests replace the Services with mocks here
