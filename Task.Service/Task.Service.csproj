@@ -5,6 +5,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- PasswordHasher, the same hasher as the seed hashes (GN-05-R1); 8.0.x matches the .NET 8 shared framework -->
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.32" />
     <!-- GN-06-R2: ILogger; 8.0.x matches the .NET 8 shared framework -->
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.3" />
     <!-- Source generator: no runtime assembly is shipped -->

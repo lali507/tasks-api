@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+using System.Text.RegularExpressions;
 using TaskManager.Core.Validation;
 
 namespace TaskManager.Service.Validation;
@@ -30,6 +32,33 @@ public sealed class FieldErrors
             Add(field, string.Format(ValidationMessages.MaxLength, field, max));
         return trimmed;
     }
+
+    // FN-GU-01: trimmed and lowercased; max 256 and email format as in DT-01
+    public string Email(string field, string? value)
+    {
+        var email = value?.Trim().ToLowerInvariant() ?? string.Empty;
+        if (email.Length == 0)
+            Add(field, ValidationMessages.Required);
+        else if (email.Length > 256)
+            Add(field, string.Format(ValidationMessages.MaxLength, field, 256));
+        else if (!EmailFormat.IsValid(email))
+            Add(field, ValidationMessages.Email);
+        return email;
+    }
+
+    // EN-01-R1: 8–64 characters with a letter and a digit. Not trimmed: spaces are part of the password.
+    public void Password(string field, string? value)
+    {
+        if (string.IsNullOrEmpty(value))
+            Add(field, ValidationMessages.Required);
+        else if (value.Length is < 8 or > 64)
+            Add(field, string.Format(ValidationMessages.Length, field, 64, 8));
+        else if (!PasswordFormat.IsMatch(value))
+            Add(field, ValidationMessages.PasswordComplexity);
+    }
+
+    private static readonly EmailAddressAttribute EmailFormat = new();
+    private static readonly Regex PasswordFormat = new(ValidationMessages.PasswordPattern, RegexOptions.Compiled);
 
     public void Add(string field, string message)
     {
