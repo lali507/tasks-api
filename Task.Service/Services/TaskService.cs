@@ -119,13 +119,52 @@ public class TaskService(
         return ServiceResult.Success();
     }
 
-    // FN-MB-06: task 18
-    public Task<ServiceResult<TaskResponse>> TakeAsync(int currentUserId, int id, CancellationToken ct) =>
-        throw new NotImplementedException();
+    // FN-MB-06, ST-01: Open -> Taken. An Admin is blocked by the API (RL-03).
+    public async Task<ServiceResult<TaskResponse>> TakeAsync(int currentUserId, int id, CancellationToken ct)
+    {
+        if (!await users.ExistsAsync(currentUserId, ct))
+            return ServiceResult<TaskResponse>.Unauthorized();
 
-    // FN-MB-07: task 19
-    public Task<ServiceResult<TaskResponse>> CompleteAsync(int currentUserId, int id, CancellationToken ct) =>
-        throw new NotImplementedException();
+        var task = await tasks.FindAsync(id, ct);
+        if (task is null)
+            return ServiceResult<TaskResponse>.NotFound();
+
+        if (task.Status != Status.Open)
+            return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskAlreadyTaken);
+
+        task.Status = Status.Taken;
+        task.TakenByUserId = currentUserId;
+        // EN-04-R3: another request took the task since FindAsync; same message as above
+        if (await tasks.UpdateAsync(task, ct) == WriteResult.ConcurrencyConflict)
+            return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskAlreadyTaken);
+
+        return ServiceResult<TaskResponse>.Success(await ToResponseAsync(id, ct));
+    }
+
+    // FN-MB-07, ST-01: Taken -> Done, only by the user who took it
+    public async Task<ServiceResult<TaskResponse>> CompleteAsync(int currentUserId, int id, CancellationToken ct)
+    {
+        if (!await users.ExistsAsync(currentUserId, ct))
+            return ServiceResult<TaskResponse>.Unauthorized();
+
+        var task = await tasks.FindAsync(id, ct);
+        if (task is null)
+            return ServiceResult<TaskResponse>.NotFound();
+
+        if (task.Status != Status.Taken)
+            return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskNotTaken);
+
+        if (task.TakenByUserId != currentUserId)
+            return ServiceResult<TaskResponse>.Forbidden(ErrorMessages.OnlyTakerCanComplete);
+
+        task.Status = Status.Done;
+        task.CompletedAt = time.GetUtcNow().UtcDateTime;
+        // EN-04-R3: e.g. an Admin edited the task since FindAsync
+        if (await tasks.UpdateAsync(task, ct) == WriteResult.ConcurrencyConflict)
+            return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskChanged);
+
+        return ServiceResult<TaskResponse>.Success(await ToResponseAsync(id, ct));
+    }
 
     // FN-00-R2, FN-AD-09-R1: an id in the body that does not exist is a field error (400), not 404
     private async Task<(TaskFields Fields, FieldErrors Errors)> ValidateAsync(TaskRequest request, CancellationToken ct)
