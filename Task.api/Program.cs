@@ -1,7 +1,9 @@
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TaskManager.Api.Auth;
 using TaskManager.Api.Extensions;
+using TaskManager.Api.Options;
 using TaskManager.Core.Entities;
 using TaskManager.Core.Interfaces.Repositories;
 using TaskManager.Core.Interfaces.Services;
@@ -31,6 +33,15 @@ builder.Services.AddScoped<ITaskService, TaskService>();
 // The hasher behind the seed hashes (GN-05-R1); stateless, so one instance
 builder.Services.AddSingleton<IPasswordHasher<User>, PasswordHasher<User>>();
 builder.Services.AddSingleton(TimeProvider.System);
+
+// IN-02, GN-04-R2, GN-08-R2: settings through IOptions; a missing value fails at startup.
+// Environment variables override appsettings (Jwt__Key, Cors__ClientUrl, DP-04-R1).
+builder.Services.AddOptions<JwtOptions>().Bind(builder.Configuration.GetSection(JwtOptions.Section))
+    .ValidateDataAnnotations().ValidateOnStart();
+builder.Services.AddOptions<ClientCorsOptions>().Bind(builder.Configuration.GetSection(ClientCorsOptions.Section))
+    .ValidateDataAnnotations().ValidateOnStart();
+// GN-04-R1, AP-04
+builder.Services.AddSingleton<JwtTokenFactory>();
 
 // DT-00-R5, CO-02: enums as strings ("Open", "Admin")
 builder.Services.AddControllers()
