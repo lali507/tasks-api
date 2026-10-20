@@ -49,7 +49,8 @@ Git's OpenSSL fails on this network ("unable to get local issuer certificate"). 
 ## Commands
 
 ```bash
-docker compose up -d              # PostgreSQL 16 (container taskdb): TaskDb + TaskDb_Test
+docker compose up -d db           # PostgreSQL 16 (container taskdb): TaskDb + TaskDb_Test
+docker compose up -d --build      # db + api (container taskapi, http://localhost:8080; secrets from .env)
 dotnet build Task.slnx
 dotnet test Task.slnx
 dotnet run --project Task.api

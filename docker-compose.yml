@@ -1,4 +1,4 @@
-# Local development (DP-02). The api service is added in task 47.
+# Local development (DP-02). docker compose up -d starts both; docker compose up -d db only the database (for the IDE, DP-02-R2).
 services:
   db:
     image: postgres:16
@@ -18,6 +18,23 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+
+  # DP-02: the API from the Dockerfile (DP-01); secrets come from .env (DP-02-R1)
+  api:
+    build: .
+    container_name: taskapi
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      # Inside the compose network the database is "db" on its own port 5432 (DP-04-R2 format)
+      ConnectionStrings__DefaultConnection: Host=db;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      Jwt__Key: ${JWT_KEY}
+      Cors__ClientUrl: ${CLIENT_URL:-http://localhost:5173}
+    ports:
+      - "${API_PORT:-8080}:8080"
 
 volumes:
   pgdata:
