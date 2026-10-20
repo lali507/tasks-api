@@ -26,6 +26,8 @@ public class ApiFactory : WebApplicationFactory<Program>
         {
             ["ConnectionStrings:DefaultConnection"] = TestDatabase.ConnectionString,
             ["Jwt:Key"] = TestJwtKey,
+            // TestDatabase recreates the database once per run (GN-05-R3)
+            ["Database:MigrateOnStartup"] = "false",
         }));
         builder.ConfigureLogging(logging => logging.AddProvider(Logs));
         // Runs after Program's registrations, so a test can replace them

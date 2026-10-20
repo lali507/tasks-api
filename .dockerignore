@@ -1,0 +1,17 @@
+# DP-01-R3: no build output, no secrets, nothing the image does not need
+**/bin/
+**/obj/
+**/logs/
+.env
+**/secrets.json
+**/*.user
+.git/
+.vs/
+.vscode/
+.idea/
+Task.Tests/
+Task.api/claude/
+db/
+docker-compose.yml
+Dockerfile
+.dockerignore

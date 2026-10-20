@@ -26,6 +26,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
 builder.Host.UseNLog(new NLogAspNetCoreOptions { RemoveLoggerFactoryFilter = false });
 
+// DP-01-R4: Render sets PORT; without it the container image listens on 8080
+if (Environment.GetEnvironmentVariable("PORT") is { Length: > 0 } port)
+    builder.WebHost.UseUrls($"http://+:{port}");
+
 // AP-05; the connection string comes from User Secrets in development (IN-01)
 builder.Services.AddDbContext<TaskDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -100,6 +104,13 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+// DP-04-R3, RD-06: apply the migrations, seed included, when the server starts. Tests turn it off and recreate their own database.
+if (app.Configuration.GetValue("Database:MigrateOnStartup", true))
+{
+    using var scope = app.Services.CreateScope();
+    scope.ServiceProvider.GetRequiredService<TaskDbContext>().Database.Migrate();
+}
 
 // GN-01 order: errors -> CorrelationId -> CORS -> Authentication -> Authorization
 app.UseMiddleware<ExceptionHandlingMiddleware>();
