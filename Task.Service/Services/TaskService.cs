@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using TaskManager.Core.DTOs.Queries;
 using TaskManager.Core.DTOs.Requests;
 using TaskManager.Core.DTOs.Responses;
@@ -18,7 +19,8 @@ public class TaskService(
     IProjectRepository projects,
     ILabelRepository labels,
     IUserRepository users,
-    TimeProvider time) : ITaskService
+    TimeProvider time,
+    ILogger<TaskService> logger) : ITaskService
 {
     // FN-MB-03, FN-AD-03: for an Admin, mine=true is always empty (RL-03)
     public async Task<ServiceResult<PagedResponse<TaskResponse>>> GetPagedAsync(int currentUserId, TaskQuery query, CancellationToken ct)
@@ -94,7 +96,10 @@ public class TaskService(
 
         // EN-04-R3: the task changed (e.g. was taken) since FindAsync
         if (await tasks.UpdateAsync(task, ct) == WriteResult.ConcurrencyConflict)
+        {
+            LogConflict(id, "update");
             return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskChanged);
+        }
 
         return ServiceResult<TaskResponse>.Success(await ToResponseAsync(id, ct));
     }
@@ -114,7 +119,10 @@ public class TaskService(
 
         // Taking is the only change an Open task can go through after FindAsync
         if (await tasks.DeleteAsync(task, ct) == WriteResult.ConcurrencyConflict)
+        {
+            LogConflict(id, "delete");
             return ServiceResult.Conflict(ErrorMessages.TaskTakenCannotDelete);
+        }
 
         return ServiceResult.Success();
     }
@@ -136,7 +144,10 @@ public class TaskService(
         task.TakenByUserId = currentUserId;
         // EN-04-R3: another request took the task since FindAsync; same message as above
         if (await tasks.UpdateAsync(task, ct) == WriteResult.ConcurrencyConflict)
+        {
+            LogConflict(id, "take");
             return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskAlreadyTaken);
+        }
 
         return ServiceResult<TaskResponse>.Success(await ToResponseAsync(id, ct));
     }
@@ -161,7 +172,10 @@ public class TaskService(
         task.CompletedAt = time.GetUtcNow().UtcDateTime;
         // EN-04-R3: e.g. an Admin edited the task since FindAsync
         if (await tasks.UpdateAsync(task, ct) == WriteResult.ConcurrencyConflict)
+        {
+            LogConflict(id, "complete");
             return ServiceResult<TaskResponse>.Conflict(ErrorMessages.TaskChanged);
+        }
 
         return ServiceResult<TaskResponse>.Success(await ToResponseAsync(id, ct));
     }
@@ -184,6 +198,10 @@ public class TaskService(
 
         return (new TaskFields(title, description, found), errors);
     }
+
+    // GN-06: one Warning per xmin conflict, with the task id and the action; CorrelationId comes from the log scope (MW-02)
+    private void LogConflict(int taskId, string action) =>
+        logger.LogWarning("Concurrency conflict on task {TaskId} during {Action}", taskId, action);
 
     // Re-reads with project, taker and labels for the response
     private async Task<TaskResponse> ToResponseAsync(int id, CancellationToken ct) =>
